@@ -1,0 +1,96 @@
+body{
+    overflow-x: hidden;
+}
+#wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+#header {
+    width: 100%;
+    padding: 0px 30px;
+    margin-top: 33px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu {
+    list-style: none;
+    display: flex;
+}
+
+#menu .item {
+    margin: 0px 15px; /* Thu nhỏ khoảng cách giữa các mục menu */
+}
+
+#menu .item a {
+    color: #626A67;
+    text-decoration: none;
+}
+
+#actions {
+    display: flex;
+}
+#actions .item {
+   margin-left: 15px; /* Thu nhỏ khoảng cách giữa các hành động */
+   width: 20px;
+}
+
+#banner {
+    width: 100%;
+    background-image: url(D:\NienLuan\img\logo\hinhanh2.jpg);
+    height: 463px;
+    margin-top: 40px;
+    display: flex;
+    padding: 0px 133px;
+    position: relative;
+}
+
+#banner .box-left, #banner .box-rigth{
+    width:  50%;
+}
+
+#banner .box-left h2{
+    font-size: 48px;
+    margin-top: 75px;
+    color: #fff;
+}
+
+#banner .box-left p{
+    color: #fff;
+}
+
+#banner .box-left button{
+    width: 191px;
+    height: 40px;
+    margin-top: 41px;
+    background: #1d1d1d;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 20px;
+    transition:0.4s;
+}
+ 
+#banner .box-left button:hover{
+    background: olive;
+}
+.stars img {
+    width: 20px; /* Đặt kích thước mong muốn cho hình ảnh */
+    height: 20px; /* Đặt kích thước mong muốn cho hình ảnh */
+}
+#wp-products{
+    padding: 116px;
+    padding-bottom: 78px;
+    padding-left: 134px;
+    padding-right: 134px;
+
+}
+#wp-products h2{
+    text-align: center;
+    margin-bottom: 76px;
+    font-size: 32px;
+    color: #626A67;
+}

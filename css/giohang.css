@@ -1,0 +1,172 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Ngăn chặn thanh cuộn ngang */
+    
+    }
+
+header {
+    background-color: #fff;
+    color: white;
+
+    text-align: center;
+    /* background-image: url('dmsp-dc-x-gam.webp');  */
+    /* height: 250px; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center center; */
+    
+    
+    }
+
+nav {
+    background-color: #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+nav a:hover {
+    background: #72767d;
+    transition: all 0.3s;
+}
+
+.main {
+    max-width: 600px;
+    margin: 2em auto;
+    background-color: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 1em 0 0.5em;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+} 
+
+/* Các kiểu dáng CSS của bạn ở đây */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-left: 40px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+ul {
+    list-style-type: none; /* Tắt dấu chấm của danh sách không có thứ tự (ul) */
+    padding: 0; /* Loại bỏ padding mặc định của danh sách */
+}
+.dropdown li {
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.product-image {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.total {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: right;
+    font-size: 18px;
+    color: #333;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 30px 200px;
+}
+
+table td img {
+    width: 150px;
+    border-radius: 10px;
+}
+th{
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+.tow-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
