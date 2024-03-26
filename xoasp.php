@@ -11,14 +11,18 @@
       die("Kết nối thất bại: " . $conn->connect_error);
   }
 
-  if(isset($_POST['delete'])){
-    $id = $_POST['product_id'];
+//   if(isset($_POST['delete'])){
+//     $id = $_POST['product_id'];
 
-    $sql = "DELETE FROM `sanpham` WHERE idsanpham = '$id'";
-    $delete = $conn->query($sql);
-    
+//     $sql = "DELETE FROM `sanpham` WHERE idsanpham = '$id'";
+//     $delete = $conn->query($sql);
+//   }
+//   if(isset($_POST['update'])){
+//     $id = $_POST['product_id'];
 
-  }
+//     $sql = "select * FROM `sanpham` WHERE idsanpham = '$id'";
+//     $delete = $conn->query($sql);
+//   }
 
 ?>
 
@@ -52,13 +56,15 @@
             // Hiển thị dữ liệu
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
+                    $so_da_format = number_format($row["price"], 0, ',', '.');
                     echo "<div class='product'>";
                     echo "<img src='img/ao/" . $row["img"] . "' alt=''>";
                     echo "<h2>" . $row["name"] . "</h2>";
-                    echo "<p>Giá: " . $row["price"] . "</p>";
-                    echo "<form action='' method='POST'>";
+                    echo "<p>Giá: " .  $so_da_format . "đ</p>";
+                    echo "<form action='suasp.php' method='POST'>";
                     echo "<input type='hidden' name='product_id' value='" . $row["idsanpham"] . "'>";
                     echo "<button type='submit' name ='delete' >Xóa</button>";
+                    echo "<button type='submit' name ='update' >Sửa</button>";
                     echo "</form>";
                     echo "</div>";
                 }

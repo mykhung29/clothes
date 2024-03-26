@@ -115,14 +115,13 @@ ul {
     background-color : grey;
 }
 
-
 </style>
 
 
 <div id="wrapper">
         <div id="header">
             <a href="Home.php" class="logo">
-                <img src="img\logo\logo.webp" style="width: 100px;"> <!-- Thu nhỏ logo -->
+                <img src="img\logo\logo (1).png" style="width: 200px;" ""> <!-- Thu nhỏ logo -->
             </a>
             <div id="menu">
                 <div class="item">

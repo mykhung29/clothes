@@ -90,39 +90,45 @@ $row = $result->fetch_assoc();
 
 
 /* CSS */
-.button-89 {
-  --b: 3px;   /* border thickness */
-  --s: .45em; /* size of the corner */
-  --color: #373B44;
-  
-  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
-  color: var(--color);
-  --_p: var(--s);
-  background:
-    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
-    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-  transition: .3s linear, color 0s, background-color 0s;
-  outline: var(--b) solid #0000;
-  outline-offset: .6em;
-  font-size: 16px;
 
-  border: 0;
-
+.button-55 {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
-.button-89:hover,
-.button-89:focus-visible{
-  --_p: 0px;
-  outline-color: var(--color);
-  outline-offset: .05em;
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
 }
 
-.button-89:active {
-  background: var(--color);
-  color: #fff;
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
     </style>
 </head>
@@ -162,7 +168,7 @@ $row = $result->fetch_assoc();
                 <input type="hidden" name="product_name" value="'. $row["name"] .'">
                 <input type="hidden" name="product_price" value="'. $row["price"] .'">
                 <input type="hidden" name="product_img" value="'. $row["img"] .'">
-                <button class="button-89"type="submit" name="buynow">Mua ngay</button>
+                <button class="button-55"type="submit" name="buynow">Mua ngay</button>
             </form>
             
 
@@ -172,7 +178,7 @@ $row = $result->fetch_assoc();
                 <input type="hidden" name="product_price" value="'. $row["price"] .'">
                 <input type="hidden" name="product_img" value="'. $row["img"] .'">
                 <input type="hidden" name="curent" value="'. $current_url .'">
-                <button class="button-89" type="submit" name="addToCart">Thêm giỏ hàng</button>
+                <button class="button-55" type="submit" name="addToCart">Thêm giỏ hàng</button>
             </form>
             
 

@@ -64,7 +64,7 @@ $conn->close();
                                     <input type="hidden" name="product_name" value="'. $row["name"] .'">
                                     <input type="hidden" name="product_price" value="'. $row["price"] .'">
                                     <input type="hidden" name="product_img" value="'. $row["img"] .'">
-                                    <button class="button-89" type="submit" name="buynow">Mua ngay</button>
+                                    <button class="button-55" type="submit" name="buynow">Mua ngay</button>
                             </form>
                             <form method="post" action="giohang.php">
                                     <input type="hidden" name="product_id" value="'. $row["idsanpham"] .'">
@@ -72,7 +72,7 @@ $conn->close();
                                     <input type="hidden" name="product_price" value="'. $row["price"] .'">
                                     <input type="hidden" name="product_img" value="'. $row["img"] .'">
                                     <input type="hidden" name="curent" value="'. $current_url .'">
-                                    <button class="button-89" onclick="addToCart()" type="submit" name="addToCart">Thêm giỏ hàng</button>
+                                    <button class="button-55" onclick="addToCart()" type="submit" name="addToCart">Thêm giỏ hàng</button>
         
                             </form>
 

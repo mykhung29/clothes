@@ -1,14 +1,66 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "nienluan";
+// Kết nối đến cơ sở dữ liệu
+$conn = new mysqli($servername, $username, $password, $dbname);
 
+// Kiểm tra kết nối
+if ($conn->connect_error) {
+    die("Kết nối thất bại: " . $conn->connect_error);
+}
+$sql = "SELECT COUNT(*) AS totalRows FROM admin";
+$result = $conn->query($sql);
+
+// Kiểm tra kết quả của truy vấn
+if ($result && $result->num_rows > 0) {
+    // Lấy dữ liệu từ kết quả truy vấn
+    $row = $result->fetch_assoc();
+    $totalRows = $row['totalRows'];
+} else {
+    $totalRows = 0;
+}
+
+$sql_donhang = "SELECT COUNT(*) AS totalRows FROM donhang";
+$result_donhang = $conn->query($sql_donhang);
+
+// Kiểm tra kết quả của truy vấn
+if ($result_donhang && $result_donhang->num_rows > 0) {
+    // Lấy dữ liệu từ kết quả truy vấn
+    $row_donhang = $result_donhang->fetch_assoc();
+    $totalRows_donhang = $row_donhang['totalRows'];
+} else {
+    $totalRows_donhang = 0;
+}
+
+$sql_sanpham = "SELECT COUNT(*) AS totalRows FROM sanpham";
+$result_sanpham = $conn->query($sql_sanpham);
+
+// Kiểm tra kết quả của truy vấn
+if ($result_sanpham && $result_sanpham->num_rows > 0) {
+    // Lấy dữ liệu từ kết quả truy vấn
+    $row_sanpham = $result_sanpham->fetch_assoc();
+    $totalRows_sanpham = $row_sanpham['totalRows'];
+} else {
+    $totalRows_sanpham = 0;
+}
+
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="icon" href="img\logo\logotd.webp">
   <title>
-    Material Dashboard 2 by Creative Tim
+    Trang quản trị DC
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -31,8 +83,8 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
-        <img src="../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold text-white">Material Dashboard 2</span>
+        <img src="img\logo\logotd.webp" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">DIRTYCOINS</span>
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
@@ -59,7 +111,7 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">receipt_long</i>
             </div>
-            <span class="nav-link-text ms-1">Xóa sản phẩm</span>
+            <span class="nav-link-text ms-1">Sửa, Xóa sản phẩm</span>
           </a>
         </li>
         <li class="nav-item">
@@ -80,11 +132,11 @@
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+          <!-- <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
             <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
-          </ol>
-          <h6 class="font-weight-bolder mb-0">Dashboard</h6>
+          </ol> -->
+          <h6 class="font-weight-bolder mb-0">DICO Admin</h6>
         </nav>
           <ul class="navbar-nav  justify-content-end">
             
@@ -120,14 +172,11 @@
                 <i class="material-icons opacity-10">weekend</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Today's Money</p>
-                <h4 class="mb-0">$53k</h4>
+                <p class="text-sm mb-0 text-capitalize">Tổng đơn hàng</p>
+                <h4 class="mb-0"><?php echo  $totalRows_donhang; ?></h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
-            <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week</p>
-            </div>
           </div>
         </div>
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -137,14 +186,11 @@
                 <i class="material-icons opacity-10">person</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                <h4 class="mb-0">2,300</h4>
+                <p class="text-sm mb-0 text-capitalize">Tổng sản phẩm cửa hàng</p>
+                <h4 class="mb-0"><?php echo  $totalRows_sanpham; ?></h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
-            <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than last month</p>
-            </div>
           </div>
         </div>
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -154,33 +200,14 @@
                 <i class="material-icons opacity-10">person</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">New Clients</p>
-                <h4 class="mb-0">3,462</h4>
+                <p class="text-sm mb-0 text-capitalize">Các quản trị</p>
+                <h4 class="mb-0"><?php echo  $totalRows; ?></h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
-            <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-2%</span> than yesterday</p>
-            </div>
           </div>
         </div>
-        <div class="col-xl-3 col-sm-6">
-          <div class="card">
-            <div class="card-header p-3 pt-2">
-              <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-                <i class="material-icons opacity-10">weekend</i>
-              </div>
-              <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Sales</p>
-                <h4 class="mb-0">$103,430</h4>
-              </div>
-            </div>
-            <hr class="dark horizontal my-0">
-            <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>than yesterday</p>
-            </div>
-          </div>
-        </div>
+       
       </div>
       </div>
 
